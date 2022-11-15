@@ -11,12 +11,22 @@ public class BitMap {
         this.hashFunctions = new HashFunctions(1, size);
     }
 
+    public void RecordFlows(int[] packets){
+        for(int packet: packets){
+            RecordFlow(packet);
+        }
+    }
+
     public void RecordFlow(int packet){
         bitMap.set(hashFunctions.Hash(packet));
     }
 
     public double Query(){
-        return (-1)*Math.log((1-bitMap.cardinality())/bitMap.size());
+        return (-1)*size*Math.log(1.0-((double)bitMap.cardinality()/(double)size));
+    }
+
+    public void Clear(){
+        bitMap.clear();
     }
 
 }
