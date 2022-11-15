@@ -15,26 +15,51 @@ public class App {
                 .map(flowId -> Math.abs(flowId)).toArray();
 
         int m = 10000;
-        
+
         BitMap bitMap = new BitMap(m);
-        bitMap.RecordFlows(flow100);
-        System.out.println(bitMap.Query());
-        bitMap.Clear();
-        
-        bitMap.RecordFlows(flow1000);
+
+        bitMap.RecordPackets(flow100);
         System.out.println(bitMap.Query());
         bitMap.Clear();
 
-        bitMap.RecordFlows(flow10000);
+        bitMap.RecordPackets(flow1000);
         System.out.println(bitMap.Query());
         bitMap.Clear();
 
-        bitMap.RecordFlows(flow100000);
+        bitMap.RecordPackets(flow10000);
         System.out.println(bitMap.Query());
         bitMap.Clear();
 
-        bitMap.RecordFlows(flow1000000);
+        bitMap.RecordPackets(flow100000);
         System.out.println(bitMap.Query());
         bitMap.Clear();
+
+        bitMap.RecordPackets(flow1000000);
+        System.out.println(bitMap.Query());
+        bitMap.Clear();
+
+        double p = 0.1;
+        ProbBitMap probBitMap = new ProbBitMap(m, p);
+
+        probBitMap.RecordPackets(flow100);
+        System.out.println(probBitMap.Query());
+        probBitMap.Clear();
+
+        probBitMap.RecordPackets(flow1000);
+        System.out.println(probBitMap.Query());
+        probBitMap.Clear();
+
+        probBitMap.RecordPackets(flow10000);
+        System.out.println(probBitMap.Query());
+        probBitMap.Clear();
+
+        probBitMap.RecordPackets(flow100000);
+        System.out.println(probBitMap.Query());
+        probBitMap.Clear();
+
+        probBitMap.RecordPackets(flow1000000);
+        System.out.println(probBitMap.Query());
+        probBitMap.Clear();
+
     }
 }
