@@ -41,4 +41,7 @@ public class HashFunctions {
     public int[] HashWithMSB(String k, int functionNumber){
         return new int[]{k.hashCode()&0b10000000000000000000000000000000,Hash(k.hashCode(),functionNumber)};
     }
+
+    
+
 }
