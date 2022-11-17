@@ -1,3 +1,5 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.Arrays;
 import java.util.BitSet;
 import java.util.stream.Stream;
@@ -61,5 +63,15 @@ public class HyperLogLog {
             sum += 1.0 / data[i];
         }
         return data.length / sum;
+    }
+
+    public void Output(String data) {
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter("HyperLogLog.txt"));
+            writer.write(data);
+            writer.close();
+        }catch(Exception e){
+            System.out.println(e.toString());
+        }
     }
 }

@@ -24,26 +24,32 @@ public class App {
                 BitMap bitMap = new BitMap(m);
                 String outputBitmap = "";
                 bitMap.RecordPackets(flow100);
-                outputBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow100.length, bitMap.Query());
+                outputBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow100.length,
+                                bitMap.Query());
                 bitMap.Clear();
 
                 bitMap.RecordPackets(flow1000);
-                outputBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow1000.length, bitMap.Query());
+                outputBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow1000.length,
+                                bitMap.Query());
                 bitMap.Clear();
 
                 bitMap.RecordPackets(flow10000);
-                outputBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow10000.length, bitMap.Query());
+                outputBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow10000.length,
+                                bitMap.Query());
                 bitMap.Clear();
 
                 bitMap.RecordPackets(flow100000);
-                outputBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow100000.length, bitMap.Query());
+                outputBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow100000.length,
+                                bitMap.Query());
                 bitMap.Clear();
 
                 bitMap.RecordPackets(flow1000000);
-                outputBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow1000000.length, bitMap.Query());
+                outputBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow1000000.length,
+                                bitMap.Query());
                 bitMap.Clear();
 
                 System.out.println(outputBitmap);
+                bitMap.Output(outputBitmap);
 
                 System.out.println("\nProbability Bitmap");
 
@@ -52,26 +58,32 @@ public class App {
                 String outputProbBitmap = "";
 
                 probBitMap.RecordPackets(flow100);
-                outputProbBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow100.length, probBitMap.Query());
+                outputProbBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow100.length,
+                                probBitMap.Query());
                 probBitMap.Clear();
 
                 probBitMap.RecordPackets(flow1000);
-                outputProbBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow1000.length, probBitMap.Query());
+                outputProbBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow1000.length,
+                                probBitMap.Query());
                 probBitMap.Clear();
 
                 probBitMap.RecordPackets(flow10000);
-                outputProbBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow10000.length, probBitMap.Query());
+                outputProbBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow10000.length,
+                                probBitMap.Query());
                 probBitMap.Clear();
 
                 probBitMap.RecordPackets(flow100000);
-                outputProbBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow100000.length, probBitMap.Query());
+                outputProbBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow100000.length,
+                                probBitMap.Query());
                 probBitMap.Clear();
 
                 probBitMap.RecordPackets(flow1000000);
-                outputProbBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow1000000.length, probBitMap.Query());
+                outputProbBitmap += String.format("True Spread: %d, Estimated Spread: %f \n", flow1000000.length,
+                                probBitMap.Query());
                 probBitMap.Clear();
 
                 System.out.println(outputProbBitmap);
+                probBitMap.Output(outputProbBitmap);
 
                 System.out.println("\nHyper Log Log");
 
@@ -98,6 +110,7 @@ public class App {
                 hll.Clear();
 
                 System.out.println(outputHll);
+                hll.Output(outputHll);
 
         }
 }

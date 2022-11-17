@@ -1,3 +1,5 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.BitSet;
 
 public class BitMap {
@@ -27,6 +29,16 @@ public class BitMap {
 
     public void Clear() {
         bitMap.clear();
+    }
+
+    public void Output(String data) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("BitMap.txt"));
+            writer.write(data);
+            writer.close();
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
     }
 
 }
