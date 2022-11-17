@@ -1,8 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.util.Arrays;
 import java.util.BitSet;
-import java.util.stream.Stream;
 
 public class HyperLogLog {
     BitSet[] registers;
@@ -66,11 +64,11 @@ public class HyperLogLog {
     }
 
     public void Output(String data) {
-        try{
+        try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("HyperLogLog.txt"));
             writer.write(data);
             writer.close();
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.toString());
         }
     }
