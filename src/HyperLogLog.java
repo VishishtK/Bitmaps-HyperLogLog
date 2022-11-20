@@ -28,7 +28,7 @@ public class HyperLogLog {
 
     public void RecordPacket(int packet) {
         int He = hashFunction.Hash(packet);
-        int Ge = Integer.numberOfTrailingZeros(geometricHashFunction.Hash(packet));
+        int Ge = Integer.numberOfLeadingZeros(geometricHashFunction.Hash(packet));
 
         int r = registers[He].cardinality() > 0 ? (int) registers[He].toLongArray()[0] : 0;
         r = Math.max(r, Ge);
