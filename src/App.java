@@ -98,6 +98,7 @@ public class App {
                 hll.Clear();
 
                 hll.RecordPackets(flow10000);
+                // hll.PrintRegisters();
                 outputHll += String.format("True Spread: %d, Estimated Spread: %f \n", flow10000.length, hll.Query());
                 hll.Clear();
 
@@ -106,6 +107,7 @@ public class App {
                 hll.Clear();
 
                 hll.RecordPackets(flow1000000);
+                hll.PrintRegisters();
                 outputHll += String.format("True Spread: %d, Estimated Spread: %f \n", flow1000000.length, hll.Query());
                 hll.Clear();
 

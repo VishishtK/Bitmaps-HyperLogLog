@@ -72,4 +72,10 @@ public class HyperLogLog {
             System.out.println(e.toString());
         }
     }
+
+    public void PrintRegisters(){
+        for(int i=0;i<noOfRegisters;i++){
+            System.out.print((registers[i].cardinality() > 0 ? (int) registers[i].toLongArray()[0] : 0) + " ,");
+        }
+    }
 }
