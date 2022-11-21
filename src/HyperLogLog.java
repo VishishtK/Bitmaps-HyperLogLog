@@ -37,7 +37,7 @@ public class HyperLogLog {
     }
 
     public double Query() {
-        double alpha = (1 + (1.079 / noOfRegisters));
+        double alpha = 0.7213/(1 + (1.079 / noOfRegisters));
         double[] data = new double[noOfRegisters];
 
         for (int i = 0; i < noOfRegisters; i++) {
